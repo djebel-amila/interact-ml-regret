@@ -12,19 +12,19 @@ Now surely some people would like to make similar things in [Unity](https://unit
 
 In this repo I share an example that measures the position of a game object and adapts sound parameters in a spooky way, not unlike a [Theremin](https://en.wikipedia.org/wiki/Theremin). This is an example for regression.
 
-![Classification Graph](/Assets/Docs/InteractMLGraph.png)
+![Regression Graph](/Assets/Docs/InteractMLGraph.png)
 
 InteractML comes with a [Wiki](https://github.com/Interactml/iml-unity/wiki) that explains the individual steps to get the system up and running and how to use it in detail. I am referencing it below. 
 
 #### To set up the system (InteractML Wiki Step 1-5)
 
 1. Install dependencies 
-2. Build the classification pipeline. 
+2. Build the regression pipeline. 
 3. Check if the data flows into the `Teach the Machine Node` as expected.
 
 #### To connect the system with Game Objects (InteractML Wiki Step 7, optional: 8)
 
-1. Add Game Objects with Scripts to get the result of the classification.
+1. Add Game Objects with Scripts to get the result of the regression.
 2. Optional: Add Scripts to pipe data into the pipeline.
 
 #### To record training examples (InteractML Wiki Step 5)
