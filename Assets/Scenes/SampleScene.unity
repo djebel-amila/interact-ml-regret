@@ -484,14 +484,17 @@ MonoBehaviour:
     - {fileID: -2861239138815408094, guid: fff4017aeec484ecbb2d6a2f8941abfc, type: 2}
   m_GameObjectNodeList:
   - {fileID: -2861239138815408094, guid: fff4017aeec484ecbb2d6a2f8941abfc, type: 2}
-  m_ScriptNodesList: []
+  m_ScriptNodesList:
+  - {fileID: 439302664230165469, guid: fff4017aeec484ecbb2d6a2f8941abfc, type: 2}
   FeaturesUpdated: 0
   ComponentsWithIMLData:
-  - GameComponent: {fileID: 0}
+  - GameComponent: {fileID: 1723191264}
     ControlClones: 0
   m_MonoBehavioursPerScriptNode:
-    m_keys: []
-    m_values: []
+    m_keys:
+    - {fileID: 1723191264}
+    m_values:
+    - {fileID: 439302664230165469, guid: fff4017aeec484ecbb2d6a2f8941abfc, type: 2}
   m_MonobehaviourClones: []
 --- !u!4 &2064108764
 Transform:

@@ -8,6 +8,7 @@ public class ReggressionData : MonoBehaviour
 
     [PullFromIMLController]
     public float SetThereminParameter;
+
     private float previousThereminParameter;
 
     void Start()

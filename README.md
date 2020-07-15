@@ -1,5 +1,7 @@
 ### The Re Min: Regression Example for InteractML in Unity
 
+** WORK IN PROGRESS - NOT FUNCTIONAL at the moment **
+
 [InteractML](http://interactml.com/) is the latest addition to the family of interactive machine learning toolkits by Dr. Rebecca Fiebrink. Tools like [Wekinator](http://www.wekinator.org/), [Sound Control](http://soundcontrolsoftware.com/) and [mimic](https://mimicproject.com) are being used by artists, educators and researchers to record and process various kinds of realtime data in order to generate sounds, visuals and other stuff. 
 
 To learn more about this approach to machine learning you can visit two online courses, [Machine Learning for Musicians and Artists](https://www.kadenze.com/courses/machine-learning-for-musicians-and-artists/info) and [Apply Creative Machine Learning](https://www.futurelearn.com/courses/apply-creative-machine-learning). Highly recommended.

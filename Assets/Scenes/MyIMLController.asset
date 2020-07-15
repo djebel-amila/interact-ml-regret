@@ -113,8 +113,8 @@ MonoBehaviour:
   IsInitialized: 1
   GameObjectDataOut: {fileID: 0}
   GameObjMissing: 0
-  state: 0
-  GOHashCode: -4958
+  state: 1
+  GOHashCode: 13760
   CreatedDuringPlaymode: 0
 --- !u!114 &-1672905437302494664
 MonoBehaviour:
@@ -181,11 +181,11 @@ MonoBehaviour:
   IsInitialized: 1
   ValueName: 
   m_In: 0
-  m_Value: 0
+  m_Value: 1
   m_Out: 0
   ReceivingData: 0
   InputConnected: 0
-  m_UserInput: 0
+  m_UserInput: 1
   float_switch: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -242,7 +242,7 @@ MonoBehaviour:
   DevMode: 0
   IsInitialized: 1
   m_ScriptInternal: {fileID: 0}
-  ScriptHashCode: -474652
+  ScriptHashCode: 13774
   m_PortsPerFieldInfo:
     m_keys:
     - _fieldName: SetThereminParameter
@@ -314,9 +314,9 @@ MonoBehaviour:
   z_switch: 1
   m_PositionExtracted:
     m_Values:
-    - 0
-    - 0
-    - 0
+    - -0.32743916
+    - 5.9417963
+    - -1
   ReceivingData: 0
 --- !u!114 &5323042951174644410
 MonoBehaviour:
@@ -394,6 +394,6 @@ MonoBehaviour:
   TrainingKey: 116
   RunningKey: 0
   TrainOnPlaymodeChange: 0
-  RunOnAwake: 0
+  RunOnAwake: 1
   matchLiveDataInputs: 1
   learningChoice: 1
