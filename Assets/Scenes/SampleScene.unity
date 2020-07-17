@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 1300590453}
   - component: {fileID: 1300590452}
   m_Layer: 0
-  m_Name: Chuck
+  m_Name: ChuckMain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebd44c97c4e04328abf7e75de2c77cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useMicrophone: 1
+  useMicrophone: 0
   microphoneIdentifier: 
 --- !u!82 &1300590453
 AudioSource:

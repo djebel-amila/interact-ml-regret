@@ -6,7 +6,7 @@ using InteractML;
 public class Theremin : MonoBehaviour
 {
     const float freqMin = 400;
-    const float freqMax = 700;
+    const float freqMax = 600;
 
     const float yMin = -5;
     const float yMax = 5;
@@ -25,26 +25,45 @@ public class Theremin : MonoBehaviour
     [PullFromIMLController]
     public float SetThereminParameter;
 
+    private float freq;
+
+    ChuckSubInstance chuck;
+
     void Start()
     {
-        ChuckSubInstance chuck = GetComponent<ChuckSubInstance>();
-        if (chuck == null) return;
+
+        float y = Mathf.Clamp(transform.position.y, yMin, yMax);
+        freq = freqMin + (y / (yMax - yMin)) * (freqMax - freqMin);
+
+        chuck = GetComponent<ChuckSubInstance>();
+
+        if (chuck == null)
+        {
+            //    print("ChuckSubInstance is null");
+            return;
+        }
+
         chuck.RunCode(@"
-		SinOsc foo => dac;
-		while( true )
-		{
-			Math.random2f( 300, 1000 ) => foo.freq;
-			100::ms => now;
-		}
+			global SinOsc s;
+			// play it forever
+			s => dac;
+		
+			while( true ) { 1::second => now; }
 	    ");
+
     }
 
     void Update()
     {
 
         // without InteractML - translating y linearly into frequency 
-        // float y = Mathf.Clamp(transform.position.y, yMin, yMax);
-        // freq = freqMin + (y / (yMax - yMin)) * (freqMax - freqMin);
+        float y = Mathf.Clamp(transform.position.y, yMin, yMax);
+        freq = freqMin + (y / (yMax - yMin)) * (freqMax - freqMin);
+
+        GetComponent<ChuckSubInstance>().RunCode(string.Format(@"
+                global SinOsc s;
+				{0} => s.freq;
+			", freq));
 
         // with InteractML  
         // print(SetThereminParameter);
