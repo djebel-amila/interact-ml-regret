@@ -1,7 +1,5 @@
 ### The Re Min: Regression Example for InteractML in Unity
 
-**NOTE THAT THE THEREMIN IS SUPER GLITCHY due to the makeshift sine oscillator, maybe future work will fix this**
-
 [InteractML](http://interactml.com/) is the latest addition to the family of interactive machine learning toolkits by Dr. Rebecca Fiebrink. Tools like [Wekinator](http://www.wekinator.org/), [Sound Control](http://soundcontrolsoftware.com/) and [mimic](https://mimicproject.com) are being used by artists, educators and researchers to record and process various kinds of realtime data in order to generate sounds, visuals and other stuff. 
 
 To learn more about this approach to machine learning you can visit two online courses, [Machine Learning for Musicians and Artists](https://www.kadenze.com/courses/machine-learning-for-musicians-and-artists/info) and [Apply Creative Machine Learning](https://www.futurelearn.com/courses/apply-creative-machine-learning). Highly recommended.
@@ -12,7 +10,7 @@ Now surely some people would like to make similar things in [Unity](https://unit
 
 ### Regression  
 
-In this repo I share an example that measures the position of a game object and adapts sound parameters in a spooky way, not unlike a [Theremin](https://en.wikipedia.org/wiki/Theremin). This is an example for regression.
+In this repo I share an example that measures the position of a game object and adapts a sound parameter in a spooky way, not unlike a [Theremin](https://en.wikipedia.org/wiki/Theremin). This is an example for regression. It also includes [Chuck/Chunity](http://chuck.stanford.edu/chunity/) for audio synthesis. 
 
 ![Regression Graph](/Assets/Docs/InteractMLGraph.png)
 
