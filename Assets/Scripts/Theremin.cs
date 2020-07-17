@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using InteractML;
 
 public class Theremin : MonoBehaviour
@@ -11,8 +12,10 @@ public class Theremin : MonoBehaviour
     const float yMin = -5;
     const float yMax = 5;
 
+    public bool useInteractML = true;
+
     [PullFromIMLController]
-    public float SetThereminParameter;
+    public float thereminParameter;
 
     private float y = 0;
     private float freq;
@@ -24,13 +27,13 @@ public class Theremin : MonoBehaviour
         freq = freqMin + (y / (yMax - yMin)) * (freqMax - freqMin);
 
         chuck = GetComponent<ChuckSubInstance>();
-        if (chuck == null) { return; }
 
-        chuck.RunCode(@"
+        // TODO this is a hack to avoid playing sound when the model is not trained
+        if (useInteractML && thereminParameter == 0) return;
+
+        chuck?.RunCode(@"
 			global SinOsc s;
-			// play it forever
 			s => dac;
-		
 			while( true ) { 1::second => now; }
 	    ");
 
@@ -39,18 +42,25 @@ public class Theremin : MonoBehaviour
     void Update()
     {
 
-        // without InteractML - translating y linearly into frequency 
-        y = Mathf.Clamp(transform.position.y, yMin, yMax);
-        freq = freqMin + (y / (yMax - yMin)) * (freqMax - freqMin);
+        if (useInteractML)
+        {
+            // with InteractML - thereminParameter trained at 0 and 1
+            if (thereminParameter == 0) return; // TODO see above
+            print(thereminParameter);
+            y = Mathf.Clamp(thereminParameter, 0, 1);
+            freq = freqMin + y * (freqMax - freqMin);
+        }
+        else
+        {
+            // without InteractML - translating y into frequency
+            y = Mathf.Clamp(transform.position.y, yMin, yMax);
+            freq = freqMin + (y / (yMax - yMin)) * (freqMax - freqMin);
+        }
 
-        if (chuck == null) { return; }
-        chuck.RunCode(string.Format(@"
-                global SinOsc s;
-				{0} => s.freq;
-			", freq));
-
-        // with InteractML  
-        // print(SetThereminParameter);
+        chuck?.RunCode(string.Format(@"
+            global SinOsc s;
+		    {0} => s.freq;
+		", freq));
 
     }
 

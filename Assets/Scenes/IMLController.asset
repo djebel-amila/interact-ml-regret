@@ -1,5 +1,55 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4489369071398601775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e955aaefcc0cc3438b670a24cf66a3a, type: 3}
+  m_Name: Theremin (Script)
+  m_EditorClassIdentifier: 
+  id: 084bdd7a-80c3-4c36-99a5-58af68253b53
+  graph: {fileID: 11400000}
+  position: {x: 808, y: -248}
+  ports:
+    keys:
+    - thereminParameter
+    values:
+    - _fieldName: thereminParameter
+      _node: {fileID: -4489369071398601775}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Output 0
+        node: {fileID: 5323042951174644410}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  DevMode: 0
+  IsInitialized: 1
+  m_ScriptInternal: {fileID: 0}
+  ScriptHashCode: 13914
+  m_PortsPerFieldInfo:
+    m_keys:
+    - _fieldName: thereminParameter
+      _node: {fileID: -4489369071398601775}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Output 0
+        node: {fileID: 5323042951174644410}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  CreatedDuringPlaymode: 0
 --- !u!114 &-2937215276355916005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,8 +163,8 @@ MonoBehaviour:
   IsInitialized: 1
   GameObjectDataOut: {fileID: 0}
   GameObjMissing: 0
-  state: 1
-  GOHashCode: 13960
+  state: 0
+  GOHashCode: 13902
   CreatedDuringPlaymode: 0
 --- !u!114 &-1672905437302494664
 MonoBehaviour:
@@ -181,11 +231,11 @@ MonoBehaviour:
   IsInitialized: 1
   ValueName: 
   m_In: 0
-  m_Value: 0
+  m_Value: 1
   m_Out: 0
   ReceivingData: 0
   InputConnected: 0
-  m_UserInput: 0
+  m_UserInput: 1
   float_switch: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -206,58 +256,8 @@ MonoBehaviour:
   - {fileID: -1444447284120409669}
   - {fileID: -1672905437302494664}
   - {fileID: 5323042951174644410}
-  - {fileID: 439302664230165469}
+  - {fileID: -4489369071398601775}
   SceneComponent: {fileID: 0}
---- !u!114 &439302664230165469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e955aaefcc0cc3438b670a24cf66a3a, type: 3}
-  m_Name: Theremin (Script)
-  m_EditorClassIdentifier: 
-  id: e7599f82-b063-4bfb-a04a-b3adfa546bc3
-  graph: {fileID: 11400000}
-  position: {x: 904, y: -248}
-  ports:
-    keys:
-    - SetThereminParameter
-    values:
-    - _fieldName: SetThereminParameter
-      _node: {fileID: 439302664230165469}
-      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Output 0
-        node: {fileID: 5323042951174644410}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 1
-  DevMode: 0
-  IsInitialized: 1
-  m_ScriptInternal: {fileID: 0}
-  ScriptHashCode: 13988
-  m_PortsPerFieldInfo:
-    m_keys:
-    - _fieldName: SetThereminParameter
-      _node: {fileID: 439302664230165469}
-      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Output 0
-        node: {fileID: 5323042951174644410}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 1
-  CreatedDuringPlaymode: 0
 --- !u!114 &2859286138459948118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,8 +314,8 @@ MonoBehaviour:
   z_switch: 1
   m_PositionExtracted:
     m_Values:
-    - -0.5937219
-    - 0.8574234
+    - -3.2941914
+    - 9.1328
     - -1
   ReceivingData: 0
 --- !u!114 &5323042951174644410
@@ -332,7 +332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 92f743e5-8016-4235-b9c5-9d58c37ffc2a
   graph: {fileID: 11400000}
-  position: {x: 504, y: -248}
+  position: {x: 472, y: -248}
   ports:
     keys:
     - IMLTrainingExamplesNodes
@@ -370,8 +370,8 @@ MonoBehaviour:
       _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: SetThereminParameter
-        node: {fileID: 439302664230165469}
+      - fieldName: thereminParameter
+        node: {fileID: -4489369071398601775}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -395,6 +395,6 @@ MonoBehaviour:
   TrainingKey: 116
   RunningKey: 0
   TrainOnPlaymodeChange: 0
-  RunOnAwake: 1
+  RunOnAwake: 0
   matchLiveDataInputs: 1
   learningChoice: 1
