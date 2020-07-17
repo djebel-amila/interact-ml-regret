@@ -11,37 +11,20 @@ public class Theremin : MonoBehaviour
     const float yMin = -5;
     const float yMax = 5;
 
-    [Range(freqMin, freqMax)]
-    public float frequency1;
-
-    [Range(freqMin, freqMax)]
-    public float frequency2;
-
-    [Range(0, 1)]
-    public float spatialBlend;
-
-    private float previousSpatialBlend = 0;
-
     [PullFromIMLController]
     public float SetThereminParameter;
 
+    private float y = 0;
     private float freq;
-
     ChuckSubInstance chuck;
 
     void Start()
     {
 
-        float y = Mathf.Clamp(transform.position.y, yMin, yMax);
         freq = freqMin + (y / (yMax - yMin)) * (freqMax - freqMin);
 
         chuck = GetComponent<ChuckSubInstance>();
-
-        if (chuck == null)
-        {
-            //    print("ChuckSubInstance is null");
-            return;
-        }
+        if (chuck == null) { return; }
 
         chuck.RunCode(@"
 			global SinOsc s;
@@ -57,22 +40,18 @@ public class Theremin : MonoBehaviour
     {
 
         // without InteractML - translating y linearly into frequency 
-        float y = Mathf.Clamp(transform.position.y, yMin, yMax);
+        y = Mathf.Clamp(transform.position.y, yMin, yMax);
         freq = freqMin + (y / (yMax - yMin)) * (freqMax - freqMin);
 
-        GetComponent<ChuckSubInstance>().RunCode(string.Format(@"
+        if (chuck == null) { return; }
+        chuck.RunCode(string.Format(@"
                 global SinOsc s;
 				{0} => s.freq;
 			", freq));
 
         // with InteractML  
         // print(SetThereminParameter);
-    }
 
-    private void OnValidate()
-    {
-        if (spatialBlend == previousSpatialBlend) { return; }
-        previousSpatialBlend = spatialBlend;
     }
 
 }

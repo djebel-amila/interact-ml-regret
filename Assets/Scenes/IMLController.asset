@@ -314,9 +314,9 @@ MonoBehaviour:
   z_switch: 1
   m_PositionExtracted:
     m_Values:
-    - 0
-    - 0
-    - 0
+    - -0.5937219
+    - 0.8574234
+    - -1
   ReceivingData: 0
 --- !u!114 &5323042951174644410
 MonoBehaviour:
